@@ -8,7 +8,6 @@ app_name = 'service'
 urlpatterns = [
     # provider
     path('providers/list/', views.ProviderListView.as_view(), name='provider_list'),
-    path('providers/list/<int:provider_id>/', views.ProviderServiceAreaList.as_view(), name='provider_service_list'),
     path('providers/create/', views.ProviderCreateView.as_view(), name='provider_create'),
     path('providers/update/<int:provider_id>/', views.ProviderUpdateView.as_view(), name='provider_update'),
     path('providers/detail/<int:provider_id>/', views.ProviderDetailView.as_view(), name='provider_detail'),
