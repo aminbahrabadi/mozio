@@ -13,6 +13,9 @@ from .models import Provider, ServiceArea
 
 
 class ProviderListView(APIView):
+    """
+    List of all providers Api
+    """
     def get(self, request, *args, **kwargs):
         providers = Provider.objects.all()
         result = {}
@@ -30,6 +33,9 @@ class ProviderListView(APIView):
 
 
 class ProviderCreateView(APIView):
+    """
+    Create provider Api
+    """
     def post(self, request, *args, **kwargs):
         serializer = ProviderSerializer(data=request.data)
 
@@ -54,6 +60,9 @@ class ProviderCreateView(APIView):
 
 
 class ProviderUpdateView(UpdateAPIView):
+    """
+    Update provider Api
+    """
     serializer_class = ProviderSerializer
 
     def update(self, request, *args, **kwargs):
@@ -69,6 +78,9 @@ class ProviderUpdateView(UpdateAPIView):
 
 
 class ProviderDetailView(APIView):
+    """
+    Provider Detail Api
+    """
     def get(self, request, *args, **kwargs):
         provider_id = self.kwargs.get('provider_id')
         provider = get_object_or_404(Provider, id=provider_id)
@@ -77,6 +89,9 @@ class ProviderDetailView(APIView):
 
 
 class ProviderDeleteView(APIView):
+    """
+    Delete provider Api
+    """
     def delete(self, request, *args, **kwargs):
         provider_id = self.kwargs.get('provider_id')
         provider = get_object_or_404(Provider, id=provider_id)
@@ -86,6 +101,9 @@ class ProviderDeleteView(APIView):
 
 
 class ServiceAreaListView(APIView):
+    """
+    List of all service areas Api
+    """
     def get(self, request, *args, **kwargs):
         services = ServiceArea.objects.all()
         result = {}
@@ -102,6 +120,9 @@ class ServiceAreaListView(APIView):
 
 
 class ProviderServiceAreaList(APIView):
+    """
+    List of all provider's service areas Api
+    """
     def get(self, request, *args, **kwargs):
         provider_id = self.kwargs.get('provider_id')
         provide_services = ServiceArea.objects.filter(provider_id=provider_id)
@@ -120,6 +141,9 @@ class ProviderServiceAreaList(APIView):
 
 
 class ServiceAreaCreateView(APIView):
+    """
+    Create service area Api
+    """
     def post(self, request, *args, **kwargs):
         serializer = ServiceAreaSerializer(data=request.data)
 
@@ -142,6 +166,9 @@ class ServiceAreaCreateView(APIView):
 
 
 class ServiceAreaUpdateView(UpdateAPIView):
+    """
+    Update service area Api
+    """
     serializer_class = ServiceAreaSerializer
 
     def update(self, request, *args, **kwargs):
@@ -157,6 +184,9 @@ class ServiceAreaUpdateView(UpdateAPIView):
 
 
 class ServiceAreaDetailView(APIView):
+    """
+    Service area detail Api
+    """
     def get(self, request, *args, **kwargs):
         service_id = self.kwargs.get('service_id')
         service = get_object_or_404(ServiceArea, id=service_id)
@@ -172,6 +202,9 @@ class ServiceAreaDetailView(APIView):
 
 
 class ServiceAreaDeleteView(APIView):
+    """
+    Delete service area
+    """
     def delete(self, request, *args, **kwargs):
         service_id = self.kwargs.get('service_id')
         service = get_object_or_404(ServiceArea, id=service_id)
@@ -181,6 +214,9 @@ class ServiceAreaDeleteView(APIView):
 
 
 class PointCheckView(APIView):
+    """
+    Point check Api, check what polygons contains the point
+    """
     def post(self, request, *args, **kwargs):
         serializer = PointCheckSerializer(data=request.data)
 
