@@ -1,4 +1,9 @@
 # Simple Django GIS Provider Services API
+## Problem
+We have a problem that many transportation suppliers we'd like to integrate cannot give us concrete zip codes, cities, etc that they serve.
+To combat this, we'd like to be able to define custom polygons as their "service area" and we'd like for the owners of these shuttle companies to be able to define and alter their polygons whenever they want.
+## What we do in this repository
+We have some Providers that provide services within a area (polygon area). We define providers and their area of services then we can check that what areas contain a requested point and how much costs the services in that areas and what providers can do the service in those areas.
 ## Live demo
 You can test live demo here: [Simple Django GIS Provider Services API](https://mozio-dev.ir)
 ## How to run
