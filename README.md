@@ -5,7 +5,7 @@ To combat this, we'd like to be able to define custom polygons as their "service
 ## What we do in this repository
 We have some Providers that provide services within a area (polygon area). We define providers and their area of services then we can check that what areas contain a requested point and how much costs the services in that areas and what providers can do the service in those areas.
 ## Live demo
-You can test live demo here: [Simple Django GIS Provider Services API](https://mozio-dev.ir)
+You can test live demo here: [Simple Django GIS Provider Services API](https://mozio.pytsts.ir)
 ## How to run
 1. Clone the project
 2. Open terminal and create a virtual environment:
